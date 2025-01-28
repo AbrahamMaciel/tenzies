@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+}
+
+body {
+  margin: 0;
+  height: 100dvh;
+  background-color: #2B283A;
+}
+
+#root{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
