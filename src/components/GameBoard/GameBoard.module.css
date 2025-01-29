@@ -1,0 +1,9 @@
+.gameBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5F5;
+    height: 80%;
+    width: 90%;
+    border-radius: 10px;
+}

@@ -1,6 +1,9 @@
 main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
   background-color: #0b2434;
   color: white;
   width: 50%;
-  height: 50%;
 }
