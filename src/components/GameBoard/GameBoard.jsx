@@ -5,7 +5,7 @@ import DiceBoard from "../DiceBoard/DiceBoard";
 function GameBoard(props) {
   return (
     <div className={styles.gameBoard}>
-      <DiceBoard generateAllDice={props.generateAllDice} />
+      <DiceBoard dice={props.dice} />
       <button type="button" className={styles.rollBtn} onClick={props.rollDice}>
         Roll
       </button>

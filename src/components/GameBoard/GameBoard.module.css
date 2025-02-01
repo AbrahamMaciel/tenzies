@@ -19,4 +19,9 @@
   font-size: 2rem;
   font-weight: 700;
   font-family: "Karla", serif;
+  cursor: pointer;
+}
+
+.gameBoard .rollBtn:active {
+  background-color: #6851ff;
 }
