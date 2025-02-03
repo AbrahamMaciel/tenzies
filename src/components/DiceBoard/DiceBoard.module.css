@@ -1,5 +1,4 @@
 .diceBoard{
-    /* background-color: red; */
     /* width: 90%; */
     /* height: auto; */
     display: grid;
@@ -8,5 +7,5 @@
     grid-template-columns: repeat(5, 1fr);
     /* column-gap: 1.5rem;
     row-gap: 2rem; */
-    gap: 2.2rem;
+    gap: 2rem;
 }

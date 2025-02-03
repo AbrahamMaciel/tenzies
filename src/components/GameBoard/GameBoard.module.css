@@ -10,6 +10,31 @@
   border-radius: 10px;
 }
 
+.gameText{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.gameText h1{
+  color: #2B283A;
+  margin: 0.2rem;
+  font-size: 2.6rem;
+  font-family: 'Karla', serif;
+  letter-spacing: -2px;
+}
+
+.gameText p{
+  color: #4A4E74;
+  width: 60%;
+  margin: 0;
+  font-family: 'Inter', serif;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
 .gameBoard .rollBtn {
   background-color: #5035ff;
   color: #ffff;
