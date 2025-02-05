@@ -41,7 +41,7 @@
   border: none;
   border-radius: 5px;
   padding: 0.8rem 3rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   font-family: "Karla", serif;
   cursor: pointer;
@@ -49,4 +49,8 @@
 
 .gameBoard .rollBtn:active {
   background-color: #6851ff;
+}
+
+.gameBoard .rollBtn:focus {
+  outline: 2px solid #000;
 }

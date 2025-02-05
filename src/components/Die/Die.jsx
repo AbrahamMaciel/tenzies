@@ -9,6 +9,8 @@ function Die(props) {
       className={`${styles.die} ${isHeld ? styles.held : null}`}
       type="button"
       onClick={() => handleClick(id)}
+      aria-label={`Die with number ${value}, currently ${isHeld? 'held': 'not held'}`}
+      aria-pressed={isHeld}
     >
       {value}
     </button>

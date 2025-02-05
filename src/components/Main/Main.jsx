@@ -2,10 +2,22 @@ import React from "react";
 import styles from "./Main.module.css";
 import GameBoard from "../GameBoard/GameBoard";
 import { nanoid } from "nanoid";
+import ReactConfetti from "react-confetti";
 
 function Main() {
-  const [dice, setDice] = React.useState(generateAllDice());
-  // console.log(dice);
+  const [dice, setDice] = React.useState(() => generateAllDice());
+  const newGameButton = React.useRef(null);
+
+  let gameWon =
+    dice.every((die) => die.isHeld) &&
+    dice.every((die) => die.value === dice[0].value);
+
+  React.useEffect(() => {
+    if (gameWon) {
+      console.log(newGameButton);
+      newGameButton.current.focus();
+    }
+  }, [gameWon]);
 
   function hold(id) {
     setDice((prevDice) => {
@@ -29,11 +41,17 @@ function Main() {
   }
 
   function rollDice() {
-    setDice(prevDice => prevDice.map(dieObj=>
-      dieObj.isHeld ?
-        dieObj :
-        {...dieObj, value: Math.ceil(Math.random() * 6)}
-    ))
+    if (!gameWon) {
+      setDice((prevDice) =>
+        prevDice.map((dieObj) =>
+          dieObj.isHeld
+            ? dieObj
+            : { ...dieObj, value: Math.ceil(Math.random() * 6) }
+        )
+      );
+    } else {
+      setDice(generateAllDice());
+    }
   }
 
   function generateAllDice() {
@@ -61,7 +79,19 @@ function Main() {
 
   return (
     <main>
-      <GameBoard rollDice={rollDice} dice={dice} hold={hold} />
+      {gameWon && <ReactConfetti />}
+      <div aria-live="polite" className={styles["sr-only"]}>
+        {gameWon && (
+          <p>Congratulations you have Won! Press 'New Game' to start again.</p>
+        )}
+      </div>
+      <GameBoard
+        rollDice={rollDice}
+        dice={dice}
+        hold={hold}
+        gameWon={gameWon}
+        ref={newGameButton}
+      />
     </main>
   );
 }

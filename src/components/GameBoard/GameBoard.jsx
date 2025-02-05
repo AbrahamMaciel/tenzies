@@ -13,8 +13,8 @@ function GameBoard(props) {
         </p>
       </div>
       <DiceBoard dice={props.dice} hold={props.hold} />
-      <button type="button" className={styles.rollBtn} onClick={props.rollDice}>
-        Roll
+      <button type="button" className={styles.rollBtn} onClick={props.rollDice} ref={props.ref}>
+        {props.gameWon? 'New Game' : 'Roll' }
       </button>
     </div>
   );
